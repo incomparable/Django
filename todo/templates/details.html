@@ -1,0 +1,20 @@
+{% include 'header.html' %}
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{todo.title}}</td>
+        <td>{{todo.text}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{% include 'footer.html' %}

@@ -1,0 +1,27 @@
+{% include 'header.html' %}
+<ul>
+    <div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for todo in todos %}
+      <tr>
+          <td>{{todo.id}}</td>
+          <td><a href="/todo/details/{{todo.id}}" >{{todo.title}} </a></td>
+          <td>{{todo.text}}</td>
+      </tr>
+    </tbody>
+
+    {% endfor %}
+  </table>
+</div>
+
+</ul>
+
+{% include 'footer.html' %}
