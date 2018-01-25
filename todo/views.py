@@ -40,22 +40,33 @@ def delete(request):
         todo.delete()
         return redirect('/todo')
     else:
-        return render(request, 'delete.html')
+        todo = Todo1.objects.all()
+        context = {
+            'todos': todo
+        }
+        return render(request, 'delete.html', context)
 
 
 def update(request):
     if(request.method == 'POST'):
         id = request.POST['id']
-        # print id
+        print id
         title = request.POST['title']
-        # print title
+        print title
         text = request.POST['text']
-        # print text
+        print text
         todo = Todo1(id=id)
-        todo.update(title, text)
+        print todo
+        todo.update(title=title)
+        todo.update(text=text)
+        todo.save()
         return redirect('/todo')
     else:
-        return render(request, 'update.html')
+        todo = Todo1.objects.all()
+        context = {
+            'todos': todo
+        }
+        return render(request, 'update.html', context)
 
 
 def signup(request):
